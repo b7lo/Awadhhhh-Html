@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "fTR66-0K4iOjd2vd0Z7bx"
+uri = "file://artifacts/logisticraft/public/images/hero.png"
+type = "image"
+title = "Cinematic logistics mission control"
+
+[[generated]]
+id = "aAhpWcBQ0MOilyROTb3Hp"
+uri = "file://artifacts/logisticraft/public/images/about.png"
+type = "image"
+title = "High-tech automated warehouse night"
+
+[[generated]]
+id = "qxsRqghzOAiWW5kz7V1Do"
+uri = "file://artifacts/logisticraft/public/images/services.png"
+type = "image"
+title = "Fleet of trucks at night"
+
+[[generated]]
+id = "3dGvK79rz-6QWnVTMpFxP"
+uri = "file://artifacts/logisticraft/public/images/network.png"
+type = "image"
+title = "Abstract supply chain network"
