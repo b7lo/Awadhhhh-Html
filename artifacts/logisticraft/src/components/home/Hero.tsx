@@ -9,9 +9,9 @@ export default function Hero() {
         <img 
           src="/images/hero.png" 
           alt="Logistics Mission Control" 
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-8"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-l from-blue-50/60 via-white/80 to-white/95" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
