@@ -1,0 +1,140 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "IBM Plex Sans Arabic",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#0000EE",
+    "secondary": "#3D61FF",
+    "accent": "#3D61FF",
+    "background": "#FFFFFF",
+    "textPrimary": "#000000",
+    "link": "#E8ECFF"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "IBM Plex Sans Arabic",
+      "heading": "IBM Plex Sans Arabic"
+    },
+    "fontStacks": {
+      "heading": [
+        "IBM Plex Sans Arabic",
+        "sans-serif"
+      ],
+      "body": [
+        "IBM Plex Sans Arabic",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "IBM Plex Sans Arabic",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "60px",
+      "h2": "40px",
+      "body": "16px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "74px"
+  },
+  "components": {
+    "input": {
+      "background": "#EFEFEF",
+      "textColor": "#000000",
+      "borderColor": "#767676",
+      "borderRadius": "0px",
+      "borderRadiusCorners": {
+        "topLeft": "0px",
+        "topRight": "0px",
+        "bottomRight": "0px",
+        "bottomLeft": "0px"
+      },
+      "shadow": "none"
+    },
+    "buttonPrimary": {
+      "background": "#3D61FF",
+      "textColor": "#0000EE",
+      "borderRadius": "50px",
+      "borderRadiusCorners": {
+        "topLeft": "50px",
+        "topRight": "50px",
+        "bottomRight": "50px",
+        "bottomLeft": "50px"
+      },
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#000000",
+      "textColor": "#0000EE",
+      "borderRadius": "50px",
+      "borderRadiusCorners": {
+        "topLeft": "50px",
+        "topRight": "50px",
+        "bottomRight": "50px",
+        "bottomLeft": "50px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "File saved at: attached_assets/logo.png",
+    "favicon": "File saved at: attached_assets/favicon.png",
+    "ogImage": "File saved at: attached_assets/ogImage.png",
+    "logoHref": "File saved at: attached_assets/logoHref.html"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is the only visible logo candidate, links to the homepage, and matches the brand inferred from the URL and page title ('أوتو').",
+    "confidence": 0.85,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "احجز موعد لعرض توضيحياحجز موعد لعرض توضيحي",
+      "reasoning": "Button #0 has a vibrant blue background (#3D61FF), which is a strong indicator of a primary CTA. The text 'احجز موعد لعرض توضيحي' suggests an action-oriented purpose, making it suitable as the primary button."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "اشحن مع أوتو الآناشحن مع أوتو الآن",
+      "reasoning": "Button #1 has a different background color (#000000) and offers an action 'اشحن مع أوتو الآن', which complements the primary CTA by providing an alternative action."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "Logistics and shipping companies in the Arab world and Turkey"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is the only visible logo candidate, links to the homepage, and matches the brand inferred from the URL and page title ('أوتو').",
+        "confidence": 0.85
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

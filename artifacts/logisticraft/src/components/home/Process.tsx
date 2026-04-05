@@ -76,7 +76,7 @@ export default function Process() {
             alt="Trucks at night" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
           
           <div className="absolute bottom-10 right-10 left-10 flex flex-col md:flex-row justify-between items-end gap-6">
             <div>

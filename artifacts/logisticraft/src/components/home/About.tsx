@@ -20,7 +20,7 @@ export default function About() {
                 alt="Automated Warehouse" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
               
               <div className="absolute bottom-6 left-6 right-6 grid grid-cols-2 gap-4">
                 <div className="bg-background/80 backdrop-blur-md border border-border rounded-xl p-4">

@@ -1,158 +1,161 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Play, ShieldCheck, Box, Route } from "lucide-react";
+import { ArrowLeft, ChevronLeft } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100dvh] flex items-center pt-24 pb-16 overflow-hidden hero-gradient">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/images/hero.png" 
-          alt="Logistics Mission Control" 
-          className="w-full h-full object-cover opacity-8"
-        />
-        <div className="absolute inset-0 bg-gradient-to-l from-blue-50/60 via-white/80 to-white/95" />
+    <section className="relative min-h-[100dvh] flex flex-col items-center justify-center pt-24 pb-0 overflow-hidden hero-gradient">
+      {/* Subtle grid lines */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Glow orbs */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[120px] bg-primary/15 pointer-events-none z-0" />
+
+      <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-sm font-bold mb-8"
+        >
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          حلول B2B لسلاسل الإمداد في المملكة
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-6 tracking-tight max-w-4xl"
+        >
+          نظام اللوجستيات الوحيد
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-primary">
+            الذي تحتاجه
+          </span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed"
+        >
+          أسرع، أسهل، أرخص... ببساطة أفضل. إدارة كاملة لسلاسل إمدادك من مكان واحد.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-4 mb-16"
+        >
+          <button className="h-13 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold flex items-center gap-3 transition-all shadow-[0_0_30px_rgba(99,120,255,0.35)] hover:shadow-[0_0_45px_rgba(99,120,255,0.5)] hover:-translate-y-0.5 text-base">
+            ابدأ شراكة استراتيجية
+            <ArrowLeft size={18} />
+          </button>
+          <button className="h-13 px-8 py-3.5 bg-white/5 border border-white/15 hover:bg-white/10 text-white rounded-xl font-bold flex items-center gap-3 transition-all text-base">
+            احجز موعد لعرض توضيحي
+            <ChevronLeft size={18} />
+          </button>
+        </motion.div>
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
+          className="flex items-center justify-center gap-10 mb-14 text-sm"
+        >
+          {[
+            { val: "99.9%", label: "دقة التسليم" },
+            { val: "1,200+", label: "مركبة نشطة" },
+            { val: "15+", label: "عاماً من الخبرة" },
+            { val: "38%", label: "توفير في التكاليف" },
+          ].map((s, i) => (
+            <div key={i} className="text-center">
+              <div className="text-2xl font-black text-white mb-0.5">{s.val}</div>
+              <div className="text-muted-foreground text-xs">{s.label}</div>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-2xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold mb-8">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              سلاسل إمداد تعتمد عليها أكبر كيانات المملكة
+      {/* Floating Dashboard Screenshot */}
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        className="relative z-10 w-full max-w-5xl mx-auto px-6"
+        style={{ perspective: "1200px" }}
+      >
+        <div
+          className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_40px_120px_rgba(0,0,0,0.8),0_0_60px_rgba(99,120,255,0.15)]"
+          style={{ transform: "rotateX(5deg)" }}
+        >
+          {/* Fake browser chrome */}
+          <div className="bg-[#1a1a2e] px-4 py-3 flex items-center gap-2 border-b border-white/5">
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-red-500/60" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
+              <div className="w-3 h-3 rounded-full bg-green-500/60" />
             </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-6 tracking-tight font-sans text-foreground">
-              القوة المطلقة في <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400 relative">
-                الخدمات اللوجستية
-                <span className="absolute bottom-1 left-0 right-0 h-1 bg-primary/30 blur-[2px]" />
-              </span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg">
-              نحن العمود الفقري الصناعي الخفي لأرامكو وسابك ونيوم. إدارة سلاسل إمداد فائقة الدقة بنسبة خطأ 0%. لأننا لا ننقل بضائع، بل نؤمن اقتصادات.
-            </p>
-            
-            <div className="flex flex-wrap items-center gap-4">
-              <button className="h-14 px-8 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold flex items-center gap-3 transition-all shadow-[0_0_20px_rgba(27,84,248,0.3)] hover:shadow-[0_0_30px_rgba(27,84,248,0.5)] hover:-translate-y-1">
-                ابدأ شراكة استراتيجية
-                <ArrowLeft size={20} />
-              </button>
-              
-              <button className="h-14 px-8 bg-secondary border border-border hover:border-primary/50 text-foreground rounded-xl font-bold flex items-center gap-3 transition-all hover:bg-secondary/80">
-                <div className="w-8 h-8 rounded-full bg-background flex items-center justify-center">
-                  <Play size={14} className="text-primary translate-x-[1px]" />
-                </div>
-                شاهد عملياتنا
-              </button>
+            <div className="flex-1 mx-4 bg-white/5 rounded-md h-6 flex items-center justify-center">
+              <span className="text-xs text-white/30 font-mono">app.logisticraft.sa</span>
             </div>
-
-            <div className="mt-16 flex items-center gap-8 border-t border-border pt-8">
-              <div>
-                <div className="text-3xl font-black text-foreground mb-1">
-                  99.9<span className="text-primary">%</span>
-                </div>
-                <div className="text-sm font-medium text-muted-foreground">دقة التسليم في الوقت المحدد</div>
-              </div>
-              <div className="w-px h-12 bg-border" />
-              <div>
-                <div className="text-3xl font-black text-foreground mb-1">
-                  12<span className="text-primary">M+</span>
-                </div>
-                <div className="text-sm font-medium text-muted-foreground">طن تم نقله في 2024</div>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative lg:h-[600px] flex items-center justify-center"
-          >
-            {/* Abstract holographic UI elements */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-3xl border border-primary/20 backdrop-blur-sm p-6 overflow-hidden flex flex-col justify-between">
-              <div className="flex justify-between items-start">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <div className="px-3 py-1 bg-primary/20 text-primary text-xs font-mono rounded font-bold">
-                  SYS.ONLINE // 200 OK
-                </div>
-              </div>
-
-              <div className="relative h-64 w-full my-auto flex items-center">
-                <div className="w-full h-1 bg-border relative">
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-background border-2 border-muted-foreground rounded-full" />
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full shadow-[0_0_10px_rgba(27,84,248,0.8)]" />
-                  <div className="absolute top-1/2 -translate-y-1/2 w-3/4 right-0 h-1 bg-gradient-to-l from-primary to-transparent" />
-                  <motion.div 
-                    animate={{ right: ["0%", "100%"] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full shadow-[0_0_10px_white]"
-                  />
-                </div>
-                <div className="absolute inset-0 flex justify-around items-center px-10">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="p-3 rounded-xl bg-secondary border border-border text-muted-foreground"><Box size={24}/></div>
-                    <span className="text-[10px] font-mono text-muted-foreground">التعبئة</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="p-3 rounded-xl bg-primary/20 border border-primary/50 text-primary glow-line"><Route size={24}/></div>
-                    <span className="text-[10px] font-mono text-primary font-bold">العبور</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500"><ShieldCheck size={24}/></div>
-                    <span className="text-[10px] font-mono text-emerald-500">التسليم</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-secondary/50 border border-border rounded-xl p-4">
-                  <div className="text-xs text-muted-foreground mb-1">الأسطول النشط</div>
-                  <div className="text-2xl font-bold font-mono text-foreground">1,248</div>
-                </div>
-                <div className="bg-secondary/50 border border-border rounded-xl p-4">
-                  <div className="text-xs text-muted-foreground mb-1">حالة الشبكة</div>
-                  <div className="text-lg font-bold text-emerald-500 flex items-center gap-2">
-                    <span className="relative flex h-3 w-3">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                    </span>
-                    مستقرة
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Badges */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 bg-card border border-border p-4 rounded-2xl shadow-xl flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
-                <ShieldCheck size={24} />
-              </div>
-              <div>
-                <div className="text-sm font-bold text-foreground">أمان تام</div>
-                <div className="text-xs text-muted-foreground">شهادة ISO 28000</div>
-              </div>
-            </motion.div>
-          </motion.div>
-
+          </div>
+          <img
+            src="/images/hero.png"
+            alt="لوحة تحكم LogistiCraft"
+            className="w-full object-cover"
+            style={{ maxHeight: "480px", objectPosition: "top" }}
+          />
+          {/* Bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
         </div>
-      </div>
+
+        {/* Floating badges */}
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-12 -right-4 md:right-4 bg-card border border-border rounded-2xl px-4 py-3 shadow-2xl flex items-center gap-3"
+        >
+          <div className="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center">
+            <span className="text-emerald-400 text-sm font-black">↑</span>
+          </div>
+          <div>
+            <div className="text-xs font-bold text-white">99.9% دقة</div>
+            <div className="text-[10px] text-muted-foreground">معدل التسليم</div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-24 -left-4 md:left-4 bg-card border border-border rounded-2xl px-4 py-3 shadow-2xl flex items-center gap-3"
+        >
+          <div className="flex items-center gap-1">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary" />
+            </span>
+          </div>
+          <div>
+            <div className="text-xs font-bold text-white">1,248 وحدة</div>
+            <div className="text-[10px] text-muted-foreground">الأسطول النشط</div>
+          </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
