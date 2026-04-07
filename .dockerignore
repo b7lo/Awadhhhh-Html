@@ -1,0 +1,11 @@
+node_modules
+**/node_modules
+**/dist
+**/.git
+.git
+artifacts/api-server
+artifacts/mockup-sandbox
+artifacts/logisticraft/dist
+.local
+scripts
+**/*.log
